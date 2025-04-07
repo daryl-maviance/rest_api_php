@@ -17,10 +17,10 @@ $route = $path[2];
 
 // Use environment variables for database connection
 $database = new Database(
-    getenv('MYSQL_HOST') ?: 'localhost',
-    getenv('MYSQL_DATABASE') ?: 'practice',
-    getenv('MYSQL_USER') ?: 'daryl',
-    getenv('MYSQL_PASSWORD') ?: 'daryl'
+    getenv('MYSQL_HOST'),
+    getenv('MYSQL_DATABASE'),
+    getenv('MYSQL_USER'),
+    getenv('MYSQL_PASSWORD')
 );
 
 switch ($route) {
