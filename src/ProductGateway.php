@@ -71,9 +71,9 @@ class ProductGateway
             $stmt->bindValue(":$key", $value, PDO::PARAM_STR);
             $stmt->bindValue(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
-            return $this ->getProduct($id);
-
         }
+        return $this ->getProduct($id);
+
     }
 }
 ?>
