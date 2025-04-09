@@ -31,6 +31,20 @@ switch ($route) {
         $controller->processRequest($_SERVER["REQUEST_METHOD"], $id);
         break;
 
+    case "user":
+        $gateway = new UserGateway($database);
+        $controller = new UserController($gateway);
+        $id = $path[3] ?? null;
+        $controller->processRequest($_SERVER["REQUEST_METHOD"], $id);
+        break;
+
+    case "customer":
+        $gateway = new CustomerGateway($database);
+        $controller = new CustomerController($gateway);
+        $id = $path[3] ?? null;
+        $controller->processRequest($_SERVER["REQUEST_METHOD"], $id);
+        break;
+
     default:
         http_response_code(404);
         break;
